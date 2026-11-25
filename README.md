@@ -1,4 +1,4 @@
-# Scanlinguo — Mỗi đồ vật, một từ mới
+# Scanlinguo — Một từ mới, một bước tiến.
 
 Chiếc cốc trên bàn tiếng Anh gọi là gì? Scanlinguo giúp người học tìm từ *mug*, nghe cách đọc và lưu ảnh chiếc cốc vào flashcard. Lần ôn sau, chính bức ảnh ấy là gợi ý để nhớ lại từ.
 
@@ -19,4 +19,4 @@ Bộ thẻ và các từ cần ôn lại được lưu bằng `localStorage` c�
 | :---: | :---: | :---: |
 | <img src="assets/scan.webp" width="185" alt="Chiếc cốc nằm trong khung quét của Scanlinguo"> | <img src="assets/result.webp" width="185" alt="Từ Mug cùng phiên âm, nghĩa tiếng Việt và câu ví dụ"> | <img src="assets/review.webp" width="185" alt="Ảnh chiếc cốc trên flashcard để người học tự nhớ từ"> |
 
-Thư viện trên landing page có đủ 10 màn hình, từ lúc làm quen đến khi xem tiến độ học tập. Chọn một ảnh để phóng to và đọc mô tả. [Khám phá thư viện giao diện](https://scanlinguo-hoc-qua-ong-kinh.blithepearl1026.chatgpt.site/#giao-dien)
+Thư viện trên landing page có đủ 10 màn hình, từ lúc làm quen đến khi xem tiến độ học tập. Chọn một ảnh để phóng to và đọc mô tả. 
