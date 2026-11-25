@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7ff">
+  <title>Scanlinguo — Mỗi đồ vật, một từ mới.</title>
+  <meta name="description" content="Học tiếng Anh từ chiếc cốc, chậu cây và những đồ vật quanh bạn. Khám phá Scanlinguo và thử quét vật mẫu, nghe phát âm, ôn từ bằng flashcard.">
+  <meta property="og:title" content="Scanlinguo — Mỗi đồ vật, một từ mới.">
+  <meta property="og:description" content="Quét đồ vật quanh bạn, nghe cách đọc và ôn lại bằng flashcard. Trải nghiệm bản mẫu ngay trên trình duyệt.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="dau-trang">
+  <svg class="icon-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-scan" viewBox="0 0 24 24"><path d="M8 3.5H5.7a2.2 2.2 0 0 0-2.2 2.2V8m12-4.5h2.8a2.2 2.2 0 0 1 2.2 2.2V8m0 8v2.3a2.2 2.2 0 0 1-2.2 2.2H16m-8 0H5.7a2.2 2.2 0 0 1-2.2-2.2V16"/><path d="M7.5 12h9"/></symbol>
+    <symbol id="i-lens" viewBox="0 0 24 24"><path d="M8 3.5H6a2.5 2.5 0 0 0-2.5 2.5v2m12.5-4.5h2A2.5 2.5 0 0 1 20.5 6v2m0 8v2a2.5 2.5 0 0 1-2.5 2.5h-2m-8 0H6A2.5 2.5 0 0 1 3.5 18v-2"/><circle cx="12" cy="12" r="3.15"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.75"/><path d="m10.4 8.6 5.1 3.4-5.1 3.4Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="m11.8 5.2-5.1 4H3.5v5.6h3.2l5.1 4Zm4.2 3.2a5.4 5.4 0 0 1 0 7.2m2.8-10.3a9 9 0 0 1 0 13.4"/></symbol>
+    <symbol id="i-cards" viewBox="0 0 24 24"><rect x="3.5" y="8" width="15.5" height="12" rx="2.8"/><path d="m7 5.6 11.5-1.5a2.5 2.5 0 0 1 2.8 2.2l.9 8"/><path d="M7.8 13H15"/></symbol>
+    <symbol id="i-cards-deco" viewBox="0 0 48 48"><path d="m13.8 11.6 17.7-4.4a3.9 3.9 0 0 1 4.7 3l4.7 20a3.9 3.9 0 0 1-2.8 4.6l-2.2.6"/><rect x="7.4" y="14" width="23.4" height="27.5" rx="4" transform="rotate(-6 19 27.5)"/><path d="m15.8 29.4 4 3.2 6.1-8"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3.2 4c3.8-.7 5.8.1 8.8 2.2 3-2.1 5-2.9 8.8-2.2v14.7c-3.7-.5-5.8.1-8.8 2.1-3-2-5.1-2.6-8.8-2.1zM12 6.2v14.6"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16M8 15v-4m5 4V7m5 8v-6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.4 4.5L19.4 7"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m14.8 5.6-6.4 6.4 6.4 6.4"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9.2 5.6 6.4 6.4-6.4 6.4"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6.5h18M3 12h18M3 17.5h18"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5.5 5.5 13 13m0-13-13 13"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M8.5 4H4v4.5M15.5 4H20v4.5m0 7V20h-4.5m-7 0H4v-4.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-6m0 1C5.5 16.5 3.4 12.1 3.4 8.4c5.1-.3 9.2 1.7 8.6 7.6Zm0-4.6C11.8 6.7 15.2 3 21 3c0 4.8-3 8.5-9 8.4Z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M19.5 9a8 8 0 1 0 .4 6m-.4-6V3.8m0 5.2h-5.2"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7.5h4.1L9 4.8h6l1.9 2.7H21v12H3Z"/><circle cx="12" cy="13.2" r="3.2"/></symbol>
+    <symbol id="i-flip" viewBox="0 0 24 24"><path d="M3 11.5a9 9 0 0 1 15.1-6.1L21 8.2M21 3v5.4h-5.4M21 12.5a9 9 0 0 1-15.1 6.1L3 15.8M3 21v-5.4h5.4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 32 32"><path d="M16 0c2.1 10.3 5.7 13.9 16 16-10.3 2.1-13.9 5.7-16 16C13.9 21.7 10.3 18.1 0 16 10.3 13.9 13.9 10.3 16 0Z" fill="currentColor" stroke="none"/></symbol>
+  </svg>
+  <a href="#noi-dung" class="skip">Bỏ qua phần điều hướng</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#dau-trang" class="brand" aria-label="Scanlinguo, về đầu trang"><img src="assets/logo.svg" width="39" height="39" alt=""><span>Scanlinguo</span></a>
+      <nav id="primary-nav" class="main-nav" aria-label="Điều hướng chính">
+        <a href="#cach-hoc">Cách học</a><a href="#giao-dien">Giao diện</a><a href="#du-an">Về dự án</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn primary compact" data-demo><svg class="icon"><use href="#i-scan"/></svg>Dùng thử</button>
+        <button class="menu-btn icon-btn" aria-controls="primary-nav" aria-expanded="false" aria-label="Mở menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="noi-dung">
+    <section class="hero" aria-labelledby="title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="hero-label"><svg class="icon"><use href="#i-lens"/></svg>Tiếng Anh qua ống kính</div>
+          <h1 id="title">Mỗi đồ vật,<br><span>một từ mới.</span></h1>
+          <p class="hero-desc">Từ chiếc cốc trên bàn đến chậu cây bên cửa sổ, quét đồ vật quanh bạn để học tên tiếng Anh và ôn lại bằng flashcard.</p>
+          <div class="hero-actions">
+            <button class="btn primary" data-demo><svg class="icon"><use href="#i-scan"/></svg>Quét thử ngay</button>
+            <a class="btn secondary" href="#cach-hoc"><svg class="icon"><use href="#i-play"/></svg>Xem cách học</a>
+          </div>
+          <div class="demo-note">
+            <span class="samples" aria-hidden="true"><img src="assets/mug.webp" alt=""><img src="assets/plant.webp" alt=""><img src="assets/laptop.webp" alt=""></span>
+            <span>Thử ngay với 3 vật mẫu</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="artboard">
+            <div class="halo" aria-hidden="true"></div>
+            <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+            <svg class="spark spark-gold" aria-hidden="true"><use href="#i-spark"/></svg>
+            <svg class="spark spark-small" aria-hidden="true"><use href="#i-spark"/></svg>
+            <svg class="trail" viewBox="0 0 110 80" aria-hidden="true"><path d="M7 7c15 30 52 8 42 33-10 25 11 33 54 23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3.5 5.5" stroke-linecap="round"/></svg>
+            <div class="device">
+              <span class="device-key key-volume" aria-hidden="true"></span><span class="device-key key-power" aria-hidden="true"></span>
+              <div class="device-display"><img class="device-screen" src="assets/scan.webp" width="780" height="1688" alt="Giao diện Scanlinguo đang quét một chiếc cốc sứ trong khung camera." fetchpriority="high"><span class="device-island" aria-hidden="true"></span></div>
+            </div>
+            <div class="flash-tile" aria-hidden="true"><svg class="tile-glyph"><use href="#i-cards-deco"/></svg></div>
+            <div class="vocab-float">
+              <div class="float-tag"><span class="small-check"><svg class="icon"><use href="#i-check"/></svg></span>Đã nhận diện</div>
+              <div class="float-body"><div><strong lang="en">Mug</strong><small lang="en">/mʌɡ/</small></div><button type="button" class="audio-btn" data-sound="mug" aria-label="Nghe phát âm từ Mug"><svg class="icon"><use href="#i-sound"/></svg></button></div>
+              <div class="float-meaning">Cái cốc, cái ly</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="how section-pad" id="cach-hoc" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <div><p class="kicker"><span></span>Cách học</p><h2 id="how-title">Học một từ trong <em>ba bước.</em></h2></div>
+          <p class="section-aside">Từ một lần chạm máy ảnh đến lúc tự gọi tên đồ vật bằng tiếng Anh.</p>
+        </div>
+        <ol class="step-grid">
+          <li class="step">
+            <div class="step-art art-scan" aria-hidden="true"><div class="tiny-shot"><img loading="lazy" src="assets/mug.webp" alt=""><div class="focus-box"><i></i><i></i><i></i><i></i></div><div class="scan-stripe"></div></div><span class="art-chip scan-chip"><svg class="icon"><use href="#i-lens"/></svg>Quét vật thể</span></div>
+            <div class="step-copy"><div class="step-no">Bước 1</div><h3>Quét đồ vật</h3><p>Hướng camera vào đồ vật để xem tên tiếng Anh, nghĩa tiếng Việt và nghe cách đọc.</p></div>
+          </li>
+          <li class="step">
+            <div class="step-art art-save" aria-hidden="true"><div class="paper-card pc-back"></div><div class="paper-card pc-mid"></div><div class="paper-card pc-front"><div class="pc-photo"><img src="assets/mug.webp" loading="lazy" alt=""></div><div><b lang="en">Mug</b><small>/mʌɡ/</small></div></div><span class="art-chip save-chip"><svg class="icon"><use href="#i-check"/></svg>Đã lưu</span></div>
+            <div class="step-copy"><div class="step-no">Bước 2</div><h3>Lưu vào flashcard</h3><p>Giữ lại bức ảnh vừa quét cùng phiên âm và câu ví dụ trong bộ thẻ của riêng bạn.</p></div>
+          </li>
+          <li class="step">
+            <div class="step-art art-recall" aria-hidden="true"><div class="recall-card"><div class="recall-head"><span><svg class="icon"><use href="#i-chart"/></svg>Tiến độ học tập</span></div><div class="mini-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><span class="art-chip recall-chip"><svg class="icon"><use href="#i-check"/></svg>Đã nhớ</span></div>
+            <div class="step-copy"><div class="step-no">Bước 3</div><h3>Lật thẻ, nhớ từ</h3><p>Nhìn ảnh, thử gọi tên rồi lật thẻ. Đánh dấu từ cần ôn lại và theo dõi tiến độ từng ngày.</p></div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section class="gallery-section section-pad" id="giao-dien" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-intro"><div><p class="kicker"><span></span>Giao diện ứng dụng</p><h2 id="gallery-title">Bên trong Scanlinguo.</h2></div>
+          <p class="section-aside">Khám phá 10 màn hình của ứng dụng. Chọn một hình để xem chi tiết.</p>
+        </div>
+        <div class="gallery-toolbar">
+          <div class="filters" role="group" aria-label="Lọc theo hành trình">
+            <button class="filter" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter" data-filter="intro" aria-pressed="false">Làm quen</button>
+            <button class="filter" data-filter="capture" aria-pressed="false">Quét &amp; lưu</button>
+            <button class="filter" data-filter="study" aria-pressed="false">Ôn tập</button>
+            <button class="filter" data-filter="stats" aria-pressed="false">Tiến độ</button>
+          </div>
+          <div class="rail-controls" role="group" aria-label="Cuộn thư viện"><button id="rail-prev" class="round-btn" aria-label="Cuộn sang trái"><svg class="icon"><use href="#i-chevron-left"/></svg></button><button id="rail-next" class="round-btn" aria-label="Cuộn sang phải"><svg class="icon"><use href="#i-chevron-right"/></svg></button></div>
+        </div>
+        <div id="screen-rail" class="screen-rail" tabindex="0" aria-label="Thư viện ảnh giao diện"></div>
+        <div class="gallery-meta"><span id="gallery-count" aria-live="polite">10 màn hình</span><span class="track-line" aria-hidden="true"><i id="track-thumb"></i></span></div>
+      </div>
+    </section>
+    <section class="project section-pad" id="du-an" aria-labelledby="project-title">
+      <div class="wrap">
+        <div class="project-grid">
+          <div class="project-intro"><p class="kicker"><span></span>Về dự án</p><h2 id="project-title">Quen đồ vật,<br> nhớ cả <em>tên gọi.</em></h2><p>Bạn từng học một từ tiếng Anh nhưng lại quên ngay khi cần gọi tên món đồ trước mặt? Scanlinguo lấy chính khoảnh khắc ấy làm điểm bắt đầu.</p></div>
+          <div class="project-notes">
+            <div class="project-note"><span class="note-icon"><svg class="icon"><use href="#i-target"/></svg></span><div><h3>Dành cho người học trực quan</h3><p>Học sinh, sinh viên và người tự học muốn mở rộng vốn từ tiếng Anh từ những vật quen thuộc ở nhà, ở lớp hay nơi làm việc.</p></div></div>
+            <div class="project-note"><span class="note-icon mint"><svg class="icon"><use href="#i-sprout"/></svg></span><div><h3>Mỗi từ gắn với một trải nghiệm</h3><p>Bức ảnh bạn tự chụp là gợi ý cho lần ôn sau. Nhìn lại chiếc cốc của mình, thử nhớ từ “mug”, rồi nghe và kiểm tra đáp án.</p></div></div>
+          </div>
+        </div>
+        <div class="resource-row" aria-label="Tài liệu thiết kế dự án">
+          <a class="resource-card" id="figma-link" href="https://www.figma.com/proto/Vd3QsBQVoIWsinPMKC9E8I/Scanliguo?node-id=0-1&p=f&t=4sbgqIdw9Jx5uUFR-0&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=90%3A4" target="_blank" rel="noopener noreferrer">
+            <span class="resource-mark figma-mark" aria-hidden="true"><svg viewBox="0 0 24 36"><circle cx="6" cy="30" r="6" fill="#13bd8c"/><path d="M0 18a6 6 0 0 1 6-6h6v12H6a6 6 0 0 1-6-6Z" fill="#a563ff"/><circle cx="18" cy="18" r="6" fill="#19bcfe"/><path d="M0 6a6 6 0 0 1 6-6h6v12H6a6 6 0 0 1-6-6Z" fill="#fa604d"/><path d="M12 0h6a6 6 0 1 1 0 12h-6Z" fill="#ff9e91"/></svg></span>
+            <span><strong>Thiết kế trên Figma</strong><small>Xem giao diện và prototype</small></span><svg class="icon resource-go" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </a>
+          <a class="resource-card" id="behance-resource" href="https://www.behance.net/gallery/258977885/Scanlinguo-Hc-t-th-gii-xung-quanh?platform=direct" target="_blank" rel="noopener noreferrer">
+            <span class="resource-mark behance-mark" aria-hidden="true">Bē</span>
+            <span><strong>Case study trên Behance</strong><small>Xem quá trình thiết kế Scanlinguo</small></span>
+            <svg class="icon resource-go" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a href="#dau-trang" class="brand"><img src="assets/logo.svg" alt="" width="31" height="31"><span>Scanlinguo</span></a><span>Học tiếng Anh từ thế giới quanh bạn.</span><a class="back-top" href="#dau-trang">Về đầu trang</a></div></footer>
+  <dialog id="demo-dialog" class="modal demo-modal" aria-labelledby="demo-title">
+    <div class="modal-bar"><div class="dialog-badge"><svg class="icon"><use href="#i-lens"/></svg>Bản trải nghiệm</div><button class="icon-btn close-modal" data-close aria-label="Đóng bản trải nghiệm"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div id="demo-content" class="demo-content"></div>
+  </dialog>
+  <dialog id="screen-dialog" class="modal screen-modal" aria-labelledby="lightbox-title">
+    <div class="modal-bar"><div class="dialog-badge"><svg class="icon"><use href="#i-book"/></svg>Giao diện Scanlinguo</div><button class="icon-btn close-modal" data-close aria-label="Đóng ảnh"><svg class="icon"><use href="#i-close"/></svg></button></div>
+    <div class="lightbox-inner"><div class="lightbox-image"><img id="lightbox-img" alt=""></div><div class="lightbox-caption"><span id="lightbox-group" class="lightbox-group"></span><h2 id="lightbox-title"></h2><p id="lightbox-desc"></p><div class="lightbox-nav"><button class="round-btn" id="lightbox-prev" aria-label="Màn hình trước"><svg class="icon"><use href="#i-chevron-left"/></svg></button><span id="lightbox-count" aria-live="polite"></span><button class="round-btn" id="lightbox-next" aria-label="Màn hình sau"><svg class="icon"><use href="#i-chevron-right"/></svg></button></div></div></div>
+  </dialog>
+  <div class="sr-only" id="audio-status" role="status"></div>
+</body>
+</html>
