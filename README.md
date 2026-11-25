@@ -1,7 +1,5 @@
 # Scanlinguo — Mỗi đồ vật, một từ mới
 
-[Mở landing page](https://scanlinguo-hoc-qua-ong-kinh.blithepearl1026.chatgpt.site/) · [Xem thiết kế trên Figma](https://www.figma.com/design/Vd3QsBQVoIWsinPMKC9E8I/Scanliguo?node-id=0-1&p=f&t=OnCe76g5iVOZ7Gap-0)
-
 Chiếc cốc trên bàn tiếng Anh gọi là gì? Scanlinguo giúp người học tìm từ *mug*, nghe cách đọc và lưu ảnh chiếc cốc vào flashcard. Lần ôn sau, chính bức ảnh ấy là gợi ý để nhớ lại từ.
 
 Ứng dụng hướng đến học sinh, sinh viên và người tự học muốn mở rộng vốn từ qua đồ vật thường gặp. Trên landing page, bạn có thể thử quét ảnh một chiếc cốc, một chậu cây hoặc một chiếc máy tính xách tay. Cả ba đều là ảnh mẫu có sẵn.
